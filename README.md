@@ -1,5 +1,12 @@
-# TempSensorApp
+# STM32U5A9J-DK-FreeRTOS TBS
 
-A simple app to read the onboard STTS22 temperature sensor on the STM32U5A9-DK development board.
+The default IDE is set to STM32CubeIDE, to change IDE open the STM32U5A9J-DK-FreeRTOS.ioc with CubeMX and select from the supported IDEs (EWARM, MDK-ARM and STM32CubeIDE). Supports flashing of the STM32U5A9J-DK board directly from TouchGFX Designer using GCC and STM32CubeProgrammer. Flashing the board requires STM32CubeProgrammer which can be downloaded from the ST webpage.
 
-GUI using TouchGFX framework
+This TBS is configured for 480 x 480 pixels 24 bpp screen resolution.
+
+Performance testing can be done using the GPIO pins designated with the following signals in CN10 connector on the underside of the board:
+
+- VSYNC_FREQ  - Pin PD1
+- RENDER_TIME - Pin PD0
+- FRAME_RATE  - Pin PF14
+- MCU_ACTIVE  - Pin PF12

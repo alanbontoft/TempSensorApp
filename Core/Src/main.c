@@ -150,7 +150,7 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-
+  HAL_GPIO_WritePin(GPIOE, LED_RED_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Init scheduler */

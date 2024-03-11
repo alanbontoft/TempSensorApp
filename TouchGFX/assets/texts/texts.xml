@@ -10,7 +10,7 @@
         <Translation Language="GB">0.0</Translation>
       </Text>
       <Text Id="__SingleUse_0FBR" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">&lt;value&gt;°C</Translation>
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
     </TextGroup>
   </Texts>

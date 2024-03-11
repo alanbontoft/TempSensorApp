@@ -60,10 +60,10 @@ const osThreadAttr_t GUI_Task_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 8192 * 4
 };
-/* Definitions for sensorTimer */
-osTimerId_t sensorTimerHandle;
-const osTimerAttr_t sensorTimer_attributes = {
-  .name = "sensorTimer"
+/* Definitions for ledTimer */
+osTimerId_t ledTimerHandle;
+const osTimerAttr_t ledTimer_attributes = {
+  .name = "ledTimer"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,7 +73,7 @@ extern portBASE_TYPE IdleTaskHook(void* p);
 
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
-void sensorTimerCallback(void *argument);
+void ledTimerCallback(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -114,11 +114,12 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
-  /* creation of sensorTimer */
-  sensorTimerHandle = osTimerNew(sensorTimerCallback, osTimerPeriodic, NULL, &sensorTimer_attributes);
+  /* creation of ledTimer */
+  ledTimerHandle = osTimerNew(ledTimerCallback, osTimerPeriodic, NULL, &ledTimer_attributes);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+  osTimerStart(ledTimerHandle, 1000);
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -157,12 +158,13 @@ void StartDefaultTask(void *argument)
   /* USER CODE END defaultTask */
 }
 
-/* sensorTimerCallback function */
-void sensorTimerCallback(void *argument)
+/* ledTimerCallback function */
+void ledTimerCallback(void *argument)
 {
-  /* USER CODE BEGIN sensorTimerCallback */
-
-  /* USER CODE END sensorTimerCallback */
+  /* USER CODE BEGIN ledTimerCallback */
+	HAL_GPIO_TogglePin(GPIOE, LED_GREEN_Pin);
+	HAL_GPIO_TogglePin(GPIOE, LED_RED_Pin);
+  /* USER CODE END ledTimerCallback */
 }
 
 /* Private application code --------------------------------------------------*/
