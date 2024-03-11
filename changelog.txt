@@ -1,0 +1,29 @@
+3.0.4
+- Support for MDK-ARM Keil IDE
+
+3.0.3
+- Update to TouchGFX 4.23.0
+- Update to CubeMX 6.10.0
+- Update to firmware FW_U5 V1.4.0
+- Enabled support for vector fonts
+- Option to flash internal (code) added in TouchGFX Designer
+- Link font and text sections to internal flash
+- Use new External Loader file
+
+3.0.2
+- Update to STM32CubeMX 6.9.1 firmware FW U5 1.3.0
+- Increase the flash speed to 93 MHz
+- Change processor to STM32U5A9 in CubeMX
+
+3.0.1
+- Upgraded to TouchGFX 4.22.0
+
+3.0.0
+First released version
+- TouchGFX 4.21.3
+- STM32CubeMX 6.8.0
+- firmware FW U5 1.2.0
+- X-CUBE-FREERTOS 1.0.0
+- support for STM32CubeIDE
+- support for EWARM
+- support "Run target" in TouchGFX Designer
